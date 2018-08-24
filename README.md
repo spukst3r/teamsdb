@@ -1,7 +1,7 @@
 # :fireworks: TeamsDB server :eyes:
 
 
-The API server, providing access to a simple database consisting of teams and people. People can be groupped in teams which in turn can be grouped with other teams. Oh, and configurations like `team1 -> team2 -> team3 -> team1` are also possible! Have access to your organisation madness via a convenient API.
+This API server provides access to a simple database consisting of teams and people. People can be groupped in teams that in turn can be grouped with other teams. Oh, and configurations like `team1 -> team2 -> team3 -> team1` are also possible! Have access to your organisation madness via a convenient API.
 
 ## Running TeamsDB
 

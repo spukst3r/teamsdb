@@ -7,7 +7,7 @@ from models import Person
 from routes import routes
 
 
-@routes.get('/api/v1/teams/{id}/members')
+@routes.get(r'/api/v1/teams/{id:\d+}/members')
 async def teams_member(request):
     team = await Person.get(int(request.match_info['id']))
 
