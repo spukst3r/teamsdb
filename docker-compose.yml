@@ -1,0 +1,33 @@
+version: '2'
+services:
+  teamsdb-db:
+    volumes:
+      - "dbvolume:/var/lib/postgresql"
+      - "./fixtures:/docker-entrypoint-initdb.d"
+    container_name: teamsdb-db
+    image: postgres:10.5
+    ports:
+      - "5432:5432"
+    expose:
+      - "5432"
+    env_file:
+      - database.env
+    restart: always
+  app:
+    container_name: teamsdb-server
+    build: .
+    command: python main.py
+    ports:
+      - "8080:8080"
+    depends_on:
+      - teamsdb-db
+    env_file:
+      - database.env
+    environment:
+      DB_HOST: teamsdb-db
+      PYTHONUNBUFFERED: 1
+    volumes:
+      - "./teamsdb:/app"
+volumes:
+  dbvolume:
+  fixtures:

@@ -1,0 +1,5 @@
+db:
+  host: localhost
+
+app:
+  port: 8000
