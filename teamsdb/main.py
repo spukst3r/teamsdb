@@ -5,13 +5,17 @@ from aiohttp import web
 
 from config import load_config
 
+from middleware.error_handler import middleware_error_handler
 from middleware.init_db import middleware_init_db
 
 from routes import routes
 
 
 app = web.Application(
-    middlewares=[middleware_init_db],
+    middlewares=[
+        middleware_error_handler,
+        middleware_init_db,
+    ],
 )
 
 app.add_routes(routes)
