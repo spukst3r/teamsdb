@@ -40,7 +40,7 @@ SET default_with_oids = false;
 CREATE TABLE public.people (
     id integer NOT NULL,
     name character varying(100) NOT NULL,
-    is_team boolean
+    is_team boolean NOT NULL
 );
 
 
