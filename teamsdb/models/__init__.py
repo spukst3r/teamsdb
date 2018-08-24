@@ -41,7 +41,7 @@ class Person(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.Unicode(100), nullable=False)
-    is_team = db.Column(db.Boolean, default=False)
+    is_team = db.Column(db.Boolean, default=False, nullable=False)
 
     async def get_teams(self, order_by=None):
         relations = await PersonXPerson.query.where(
